@@ -2,12 +2,13 @@
 <body>
 
 <script>
-function add(){
+function calc(){
 let PV = document.getElementById("num1").value;
 let n = document.getElementById("num2").value;
 let r = document.getElementById("num3").value;
 let P = ((r/100/12) * PV) / (1-(1+(r/100/12))**-(n*12));
 document.getElementById("ans").innerHTML = P;
+document.getElementById("ans").innerHTML = "If your loan is $" + PV + " and your loan period is " + n + " years at " + r + "%, your monthly payment will be $" + P.toFixed(2);
 }
 
 </script>
@@ -17,7 +18,7 @@ document.getElementById("ans").innerHTML = P;
 What amount are you borrowing?
 <input id = "num1">
 <br>
-What is the loan period?
+What is the loan period in years?
 <input id = "num2">
 <br>
 % Annual interest rate
@@ -26,14 +27,12 @@ What is the loan period?
   
 
   <br>
-<button onclick="add()"> Calculate your loan payment! </button>
+<button onclick="calc()"> Calculate your loan payment! </button>
   <br>
 
 </p>
 
-<p>
-  Your result is <span id="ans">_____________</span>
-  
+<p id="ans">
 </p>
 
 
